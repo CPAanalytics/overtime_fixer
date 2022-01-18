@@ -1,0 +1,3 @@
+[console_scripts]
+overtime_fix = overtime_fix.main:overtime_fix
+
