@@ -87,7 +87,7 @@ def fix_horrific_overtime_calc_mess(file_path_org, file_path_recalc, filter_colu
 
     if filter_columns_to_keep:
         concat_df = concat_df.filter(like=filter_columns_to_keep, axis=1)
-    print(f'dropping columns that contain string {filter_columns_to_drop}')
+    print(f'dropping columns that do not contain string {filter_columns_to_keep}')
     print(f'final: {concat_df.shape[0]} rows {concat_df.shape[1]} columns')
 
     if filter_columns_to_drop:
@@ -122,6 +122,7 @@ def fix_horrific_overtime_calc_mess(file_path_org, file_path_recalc, filter_colu
                 string = str.ljust(str(income), 30) + ': ' + str(round(value, 2))
                 f.write(string + '\n')
             f.write('\n')
+    print('Saved ' + file_path('diff.txt'))
 
 
 @click.command()
