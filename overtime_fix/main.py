@@ -27,7 +27,7 @@ def create_upload(concat_df):
 
         dept_default_dict = defaultdict(int)
         for income, value in rows.iteritems():
-            if str(income).endswith('_diff'):
+            if str(income).endswith('Amount_diff'):
                 dept = str(income).split(' ')[1]
                 dept_default_dict[dept] += value
 
